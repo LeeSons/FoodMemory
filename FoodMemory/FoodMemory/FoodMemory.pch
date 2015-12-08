@@ -1,0 +1,17 @@
+//
+//  FoodMemory.pch
+//  FoodMemory
+//
+//  Created by morplcp on 15/12/2.
+//  Copyright © 2015年 morplcp. All rights reserved.
+//
+
+#import <AVOSCloud/AVOSCloud.h>
+#import "GlobalReference.h"
+#import "URLDefines.h"
+#import "LCPNetWorking.h"
+#import "MJRefresh.h"
+#import "NSTimer+MyTimer.h"
+#import "LeanCloudDBHelper.h"
+#import "UIViewController+AlertMsg.h"
+#import "UIImageView+WebCache.h"

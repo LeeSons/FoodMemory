@@ -42,7 +42,8 @@ static NSString *perCellIdent = @"perCell";
 }
 
 - (void)showHDImage{
-    AVFile *file = [self.currentUser objectForKey:@"userPic"];
+    AVUser *user = [AVUser currentUser];
+    AVFile *file = [user objectForKey:@"userPic"];
     ShowHDImage *showImg = [[ShowHDImage alloc] initWithImageURL:file.url];
     [self.view.window addSubview:showImg];
     [showImg show];

@@ -45,11 +45,14 @@
     self.txtName.text = [user objectForKey:@"uName"];
     self.txtHobby.text = [user objectForKey:@"hobby"];
     self.lblAdd.text = [user objectForKey:@"add"];
-    if ([[user objectForKey:@"gender"] isEqualToString:@"F"]) {
-        [self.pickGender selectRow:1 inComponent:0 animated:NO];
-    }else{
-        [self.pickGender selectRow:0 inComponent:0 animated:NO];
-    }
+    __weak typeof(self)vc = self;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        if ([[user objectForKey:@"gender"] isEqualToString:@"F"]) {
+            [vc.pickGender selectRow:1 inComponent:0 animated:YES];
+        }else{
+            [vc.pickGender selectRow:0 inComponent:0 animated:YES];
+        }
+    });
     // 设置其他控件
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectCity)];
     [self.viewSelectCity addGestureRecognizer:tap];
@@ -75,7 +78,9 @@
     [user setObject:@"" forKey:@"collectionDIY"];
     [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
-            LCPLog(@"OK");
+            [self alertNoAction:@"修改成功" Duration:1];
+        }else{
+            [self alertNoAction:@"修改失败" Duration:1];
         }
     }];
 }

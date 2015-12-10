@@ -70,7 +70,10 @@ static NSString *collCellIdent = @"imgColllCell";
         }else {
             self.lblUserNick.text = [[objects lastObject] objectForKey:@"userNickName"];
             AVFile *file = [[objects lastObject] objectForKey:@"userPic"];
-            [self.imgUserPic sd_setImageWithURL:[NSURL URLWithString:file.url]];
+            __weak typeof(self)vc = self;
+            [file getThumbnail:YES width:100 height:100 withBlock:^(UIImage *image, NSError *error) {
+                vc.imgUserPic.image = image;
+            }];
         }
     }];
     NSArray *array = [dynamic objectForKey:@"imgArray"];

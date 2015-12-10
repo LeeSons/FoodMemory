@@ -20,6 +20,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    if ([self respondsToSelector:@selector(setAutomaticallyAdjustsScrollViewInsets:)]) {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
     NSURL *url = [NSURL URLWithString:@"http://www.msshuo.cn/app_1_4/hot/raiders?tpl=raiders&crowd"];
     NSURLRequest *req = [NSURLRequest requestWithURL:url];
     [self.web loadRequest:req];

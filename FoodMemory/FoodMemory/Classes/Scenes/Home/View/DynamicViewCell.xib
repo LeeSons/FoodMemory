@@ -84,19 +84,13 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CtD-xL-b5Q">
-                                        <rect key="frame" x="271" y="36" width="70" height="32"/>
-                                        <animations/>
-                                        <state key="normal" title="1234" image="iconfont-zan.png">
-                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="actionZan:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Gwr-S6-Tid"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="flg-cx-351">
-                                        <rect key="frame" x="341" y="36" width="70" height="32"/>
+                                        <rect key="frame" x="411" y="38" width="70" height="30"/>
                                         <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="MsP-09-g7j"/>
+                                            <constraint firstAttribute="width" constant="70" id="w5T-ed-emS"/>
+                                        </constraints>
                                         <state key="normal" title="23" image="iconfont-pinglun.png">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -104,39 +98,33 @@
                                             <action selector="actionCommend:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Fe9-DM-OoU"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ghe-dX-AzH">
-                                        <rect key="frame" x="411" y="36" width="70" height="32"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CtD-xL-b5Q">
+                                        <rect key="frame" x="340" y="38" width="70" height="30"/>
                                         <animations/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="70" id="L50-zA-GBd"/>
-                                            <constraint firstAttribute="height" constant="32" id="XGr-7i-OER"/>
+                                            <constraint firstAttribute="width" constant="70" id="Eqc-Ii-2AD"/>
+                                            <constraint firstAttribute="height" constant="30" id="eUY-WE-O2W"/>
                                         </constraints>
-                                        <state key="normal" title="24" image="iconfont-shoucang.png">
+                                        <state key="normal" title="1234" image="iconfont-zan.png">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="btnCollection:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="PDb-G7-aag"/>
+                                            <action selector="actionZan:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Gwr-S6-Tid"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstItem="flg-cx-351" firstAttribute="top" secondItem="Ghe-dX-AzH" secondAttribute="top" id="08V-0f-oWW"/>
-                                    <constraint firstItem="flg-cx-351" firstAttribute="width" secondItem="Ghe-dX-AzH" secondAttribute="width" id="1C6-R9-h8g"/>
+                                    <constraint firstAttribute="bottom" secondItem="CtD-xL-b5Q" secondAttribute="bottom" id="BNu-se-XmO"/>
                                     <constraint firstAttribute="height" constant="68" id="Fab-Ay-NB6"/>
-                                    <constraint firstItem="flg-cx-351" firstAttribute="leading" secondItem="CtD-xL-b5Q" secondAttribute="trailing" id="G13-PN-aX5"/>
                                     <constraint firstItem="I4p-QC-csd" firstAttribute="top" secondItem="5Jh-FM-VY0" secondAttribute="top" id="Hpm-vn-h0u"/>
-                                    <constraint firstItem="CtD-xL-b5Q" firstAttribute="height" secondItem="flg-cx-351" secondAttribute="height" id="JWW-yf-5q0"/>
-                                    <constraint firstItem="CtD-xL-b5Q" firstAttribute="top" secondItem="flg-cx-351" secondAttribute="top" id="Lfy-fI-2L4"/>
-                                    <constraint firstItem="Ghe-dX-AzH" firstAttribute="leading" secondItem="flg-cx-351" secondAttribute="trailing" id="MJl-z7-dfH"/>
+                                    <constraint firstItem="flg-cx-351" firstAttribute="leading" secondItem="CtD-xL-b5Q" secondAttribute="trailing" constant="1" id="IDU-GN-aS3"/>
+                                    <constraint firstAttribute="trailing" secondItem="flg-cx-351" secondAttribute="trailing" id="afJ-xa-NMB"/>
                                     <constraint firstAttribute="trailing" secondItem="I4p-QC-csd" secondAttribute="trailing" id="ajZ-5o-5fG"/>
-                                    <constraint firstItem="flg-cx-351" firstAttribute="height" secondItem="Ghe-dX-AzH" secondAttribute="height" id="daH-f3-Rcn"/>
+                                    <constraint firstAttribute="bottom" secondItem="flg-cx-351" secondAttribute="bottom" id="frM-3i-ss7"/>
                                     <constraint firstItem="I4p-QC-csd" firstAttribute="leading" secondItem="dAb-ZF-JaA" secondAttribute="trailing" constant="2" id="hDS-oQ-7UO"/>
                                     <constraint firstItem="dAb-ZF-JaA" firstAttribute="leading" secondItem="5Jh-FM-VY0" secondAttribute="leading" constant="8" id="hEW-nS-zSk"/>
-                                    <constraint firstAttribute="trailing" secondItem="Ghe-dX-AzH" secondAttribute="trailing" id="iwU-Lr-VFM"/>
                                     <constraint firstItem="dAb-ZF-JaA" firstAttribute="top" secondItem="5Jh-FM-VY0" secondAttribute="top" id="saI-vm-Q5Q"/>
-                                    <constraint firstItem="CtD-xL-b5Q" firstAttribute="width" secondItem="flg-cx-351" secondAttribute="width" id="yUU-1m-0OD"/>
-                                    <constraint firstItem="Ghe-dX-AzH" firstAttribute="top" secondItem="I4p-QC-csd" secondAttribute="bottom" constant="15" id="zul-Hm-yU9"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fg1-NT-88c">
@@ -205,9 +193,8 @@
             <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="bodyViewHeight" destination="3zU-2e-jVn" id="GlP-gB-tac"/>
-                <outlet property="btnCollection" destination="Ghe-dX-AzH" id="zxU-qQ-Rhg"/>
                 <outlet property="btnCommend" destination="flg-cx-351" id="V2Y-cZ-Yuo"/>
-                <outlet property="btnZan" destination="CtD-xL-b5Q" id="tth-4I-s1Z"/>
+                <outlet property="btnZan" destination="CtD-xL-b5Q" id="c8l-VU-dfv"/>
                 <outlet property="collHeight" destination="dS8-Eb-2jw" id="2h9-MB-CIP"/>
                 <outlet property="collView" destination="kLc-9q-DGN" id="fxT-hq-qp0"/>
                 <outlet property="contentHeight" destination="W3K-JN-Hui" id="YmC-pl-MPG"/>
@@ -224,7 +211,6 @@
         <image name="3.png" width="96" height="96"/>
         <image name="iconfont-dingwei.png" width="24" height="24"/>
         <image name="iconfont-pinglun.png" width="24" height="24"/>
-        <image name="iconfont-shoucang.png" width="24" height="24"/>
         <image name="iconfont-zan.png" width="24" height="24"/>
     </resources>
 </document>

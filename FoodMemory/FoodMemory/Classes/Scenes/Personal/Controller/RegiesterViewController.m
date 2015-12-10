@@ -46,6 +46,7 @@
     [user setObject:@"" forKey:@"hobby"];
     [user setObject:@"" forKey:@"add"];
     [user setObject:@"" forKey:@"collectionDIY"];
+    [user setObject:@"" forKey:@"like_dynamic"];
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded)[self dismissViewControllerAnimated:YES completion:nil];
         else LCPLog(@"注册失败%@",error);

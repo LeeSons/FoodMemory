@@ -151,11 +151,16 @@
     }
 }
 
+// 发布动态判断是否登录
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([sender isKindOfClass:[UIBarButtonItem class]]) {
         AVUser *user = [AVUser currentUser];
         if (user == nil) {
             LoginViewController *loginVC = [self.storyboard instantiateViewControllerWithIdentifier:@"loginVC"];
+            __weak typeof(self)vc = self;
+            loginVC.backhandel = ^(){
+                [vc.tabBarController setSelectedIndex:0];
+            };
             [self presentViewController:loginVC animated:YES completion:nil];
             return;
         }

@@ -14,8 +14,6 @@
 		79035C7B1C16D37500E14B11 /* PhotoBoardScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 79035C781C16D37500E14B11 /* PhotoBoardScrollView.m */; };
 		79035C7C1C16D37500E14B11 /* PhotoScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 79035C7A1C16D37500E14B11 /* PhotoScrollView.m */; };
 		79035C7F1C16D37E00E14B11 /* PhotoBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79035C7E1C16D37E00E14B11 /* PhotoBoardViewController.m */; };
-		79035C821C16EFAC00E14B11 /* SelectLocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79035C811C16EFAC00E14B11 /* SelectLocationController.m */; };
-		79035C881C16F9C300E14B11 /* PersonalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79035C871C16F9C300E14B11 /* PersonalViewController.m */; };
 		79035C8D1C17063800E14B11 /* iconfont-chidacan.png in Resources */ = {isa = PBXBuildFile; fileRef = 79035C891C17063800E14B11 /* iconfont-chidacan.png */; };
 		79035C8E1C17063800E14B11 /* iconfont-chidacan@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79035C8A1C17063800E14B11 /* iconfont-chidacan@2x.png */; };
 		79035C8F1C17063800E14B11 /* iconfont-sc.png in Resources */ = {isa = PBXBuildFile; fileRef = 79035C8B1C17063800E14B11 /* iconfont-sc.png */; };
@@ -106,6 +104,9 @@
 		79BFA5641C190D27002426D0 /* CityDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 79BFA5631C190D27002426D0 /* CityDataManager.m */; };
 		79BFA56A1C1926CD002426D0 /* LCPPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 79BFA5691C1926CD002426D0 /* LCPPicker.m */; };
 		79BFA56D1C196272002426D0 /* ShowHDImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 79BFA56C1C196272002426D0 /* ShowHDImage.m */; };
+		79BFA5701C197E17002426D0 /* SelectLocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79BFA56F1C197E17002426D0 /* SelectLocationController.m */; };
+		79BFA5731C197E24002426D0 /* PersonalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79BFA5721C197E24002426D0 /* PersonalViewController.m */; };
+		79BFA5761C199865002426D0 /* commentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79BFA5751C199865002426D0 /* commentViewController.m */; };
 		79C40DD91C17C4E500952707 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C40DD81C17C4E500952707 /* TestViewController.m */; };
 		79C40DE41C17D19A00952707 /* WebViewJavascriptBridge.js.txt in Resources */ = {isa = PBXBuildFile; fileRef = 79C40DDE1C17D19A00952707 /* WebViewJavascriptBridge.js.txt */; };
 		79C40DE51C17D19A00952707 /* WebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C40DDF1C17D19A00952707 /* WebViewJavascriptBridge.m */; };
@@ -154,10 +155,6 @@
 		79035C7A1C16D37500E14B11 /* PhotoScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoScrollView.m; sourceTree = "<group>"; };
 		79035C7D1C16D37E00E14B11 /* PhotoBoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoBoardViewController.h; sourceTree = "<group>"; };
 		79035C7E1C16D37E00E14B11 /* PhotoBoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoBoardViewController.m; sourceTree = "<group>"; };
-		79035C801C16EFAC00E14B11 /* SelectLocationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SelectLocationController.h; path = ../../../../../../../../Documents/SelectLocationController.h; sourceTree = "<group>"; };
-		79035C811C16EFAC00E14B11 /* SelectLocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SelectLocationController.m; path = ../../../../../../../../Documents/SelectLocationController.m; sourceTree = "<group>"; };
-		79035C861C16F9C300E14B11 /* PersonalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PersonalViewController.h; path = ../../../../../../../../Documents/PersonalViewController.h; sourceTree = "<group>"; };
-		79035C871C16F9C300E14B11 /* PersonalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PersonalViewController.m; path = ../../../../../../../../Documents/PersonalViewController.m; sourceTree = "<group>"; };
 		79035C891C17063800E14B11 /* iconfont-chidacan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-chidacan.png"; sourceTree = "<group>"; };
 		79035C8A1C17063800E14B11 /* iconfont-chidacan@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-chidacan@2x.png"; sourceTree = "<group>"; };
 		79035C8B1C17063800E14B11 /* iconfont-sc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-sc.png"; sourceTree = "<group>"; };
@@ -298,6 +295,12 @@
 		79BFA5691C1926CD002426D0 /* LCPPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCPPicker.m; sourceTree = "<group>"; };
 		79BFA56B1C196272002426D0 /* ShowHDImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowHDImage.h; sourceTree = "<group>"; };
 		79BFA56C1C196272002426D0 /* ShowHDImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowHDImage.m; sourceTree = "<group>"; };
+		79BFA56E1C197E17002426D0 /* SelectLocationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectLocationController.h; sourceTree = "<group>"; };
+		79BFA56F1C197E17002426D0 /* SelectLocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectLocationController.m; sourceTree = "<group>"; };
+		79BFA5711C197E24002426D0 /* PersonalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalViewController.h; sourceTree = "<group>"; };
+		79BFA5721C197E24002426D0 /* PersonalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalViewController.m; sourceTree = "<group>"; };
+		79BFA5741C199865002426D0 /* commentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = commentViewController.h; sourceTree = "<group>"; };
+		79BFA5751C199865002426D0 /* commentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = commentViewController.m; sourceTree = "<group>"; };
 		79C40DD71C17C4E500952707 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		79C40DD81C17C4E500952707 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		79C40DDD1C17D19A00952707 /* WebViewJavascriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridge.h; sourceTree = "<group>"; };
@@ -691,8 +694,8 @@
 		79BF99A11C0E8DB10096859D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				79035C861C16F9C300E14B11 /* PersonalViewController.h */,
-				79035C871C16F9C300E14B11 /* PersonalViewController.m */,
+				79BFA5711C197E24002426D0 /* PersonalViewController.h */,
+				79BFA5721C197E24002426D0 /* PersonalViewController.m */,
 				79C40DF21C180AB900952707 /* LoginViewController.h */,
 				79C40DF31C180AB900952707 /* LoginViewController.m */,
 				79AE2D031C181EE700F1C1CD /* RegiesterViewController.h */,
@@ -730,14 +733,16 @@
 		79BF99A41C0E8DC70096859D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				79BFA56E1C197E17002426D0 /* SelectLocationController.h */,
+				79BFA56F1C197E17002426D0 /* SelectLocationController.m */,
 				798B97DD1C111D36008A248C /* ReleaseViewController.h */,
 				798B97DE1C111D36008A248C /* ReleaseViewController.m */,
 				798B97EC1C112B43008A248C /* DynamicViewController.h */,
 				798B97ED1C112B43008A248C /* DynamicViewController.m */,
 				79035C7D1C16D37E00E14B11 /* PhotoBoardViewController.h */,
 				79035C7E1C16D37E00E14B11 /* PhotoBoardViewController.m */,
-				79035C801C16EFAC00E14B11 /* SelectLocationController.h */,
-				79035C811C16EFAC00E14B11 /* SelectLocationController.m */,
+				79BFA5741C199865002426D0 /* commentViewController.h */,
+				79BFA5751C199865002426D0 /* commentViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1050,7 +1055,6 @@
 			files = (
 				79035C7C1C16D37500E14B11 /* PhotoScrollView.m in Sources */,
 				79035C7F1C16D37E00E14B11 /* PhotoBoardViewController.m in Sources */,
-				79035C881C16F9C300E14B11 /* PersonalViewController.m in Sources */,
 				791F4C0D1C12874100500DC0 /* AGIPCAlbumsController.m in Sources */,
 				79AE2D121C185E3A00F1C1CD /* EditViewController.m in Sources */,
 				79C40DE61C17D19A00952707 /* WebViewJavascriptBridgeBase.m in Sources */,
@@ -1079,6 +1083,7 @@
 				791F4C111C12874100500DC0 /* AGIPCPreviewController.m in Sources */,
 				798B983B1C11D80E008A248C /* AddImageView.m in Sources */,
 				791F4BEC1C12798800500DC0 /* UIScrollView+MJRefresh.m in Sources */,
+				79BFA5761C199865002426D0 /* commentViewController.m in Sources */,
 				798B98041C113F17008A248C /* UIViewController+MMDrawerController.m in Sources */,
 				79D3A2431C143E6D00B9C397 /* DynamicCollViewCell.m in Sources */,
 				798B97DF1C111D36008A248C /* ReleaseViewController.m in Sources */,
@@ -1096,18 +1101,19 @@
 				791F4C141C12874100500DC0 /* ALAsset+AGIPC.m in Sources */,
 				79BF99741C0E87250096859D /* AppDelegate.m in Sources */,
 				79C40DE71C17D19A00952707 /* WKWebViewJavascriptBridge.m in Sources */,
-				79035C821C16EFAC00E14B11 /* SelectLocationController.m in Sources */,
 				791F4BE71C12798800500DC0 /* MJRefreshBaseView.m in Sources */,
 				791F4BEA1C12798800500DC0 /* MJRefreshHeaderView.m in Sources */,
 				791F4C0B1C12874100500DC0 /* AGImagePickerController.m in Sources */,
 				791F4C1A1C12D3D800500DC0 /* UIViewController+AlertMsg.m in Sources */,
 				798B98101C116B71008A248C /* LeftSettingViewController.m in Sources */,
 				79AE2D0B1C18552100F1C1CD /* LCPImageView.m in Sources */,
+				79BFA5731C197E24002426D0 /* PersonalViewController.m in Sources */,
 				79BF99711C0E87250096859D /* main.m in Sources */,
 				791F4BED1C12798800500DC0 /* UIView+MJExtension.m in Sources */,
 				791F4BEB1C12798800500DC0 /* UIScrollView+MJExtension.m in Sources */,
 				79D3A21F1C140D1700B9C397 /* DynamicViewCell.m in Sources */,
 				79BF99E01C0E964E0096859D /* BasePageController.m in Sources */,
+				79BFA5701C197E17002426D0 /* SelectLocationController.m in Sources */,
 				798B98011C113F17008A248C /* MMDrawerBarButtonItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

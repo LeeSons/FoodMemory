@@ -30,6 +30,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.imgUPic = [[LCPImageView alloc] initWithFrame:CGRectMake((kWindowWidth - 100) / 2.0, 10, 100, 100)];
     [self.viewForUPic addSubview:_imgUPic];
     self.changePic = NO;

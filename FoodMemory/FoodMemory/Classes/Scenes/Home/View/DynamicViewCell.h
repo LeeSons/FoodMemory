@@ -17,7 +17,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblLocationName;
 @property (weak, nonatomic) IBOutlet UIButton *btnZan;
 @property (weak, nonatomic) IBOutlet UIButton *btnCommend;
-@property (weak, nonatomic) IBOutlet UIButton *btnCollection;
 @property (nonatomic, strong) NSMutableArray *imgArray;
 @property (nonatomic, strong) NSMutableArray *imgHArray;
 @property (nonatomic, strong) AVObject *dynamic;

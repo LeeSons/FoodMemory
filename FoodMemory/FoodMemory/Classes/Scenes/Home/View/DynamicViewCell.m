@@ -10,8 +10,10 @@
 #import "DynamicCollViewCell.h"
 #import "AppDelegate.h"
 #import "PhotoBoardViewController.h"
+#import "LoginViewController.h"
 @interface DynamicViewCell ()<UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 @property(nonatomic, strong)NSMutableArray *placehoderArray;
+@property(nonatomic, strong)AVUser *user;
 
 @end
 
@@ -20,6 +22,7 @@
 static NSString *collCellIdent = @"imgColllCell";
 
 - (void)awakeFromNib {
+    self.user = [AVUser currentUser];
     [self.collView registerNib:[UINib nibWithNibName:@"DynamicCollViewCell" bundle:nil] forCellWithReuseIdentifier:collCellIdent];
     self.collView.delegate = self;
     self.collView.dataSource = self;
@@ -35,6 +38,19 @@ static NSString *collCellIdent = @"imgColllCell";
     if (self.imgHArray.count > 0) {
         [self.imgHArray removeAllObjects];
     }
+    NSString *like_dynamic = [self.user objectForKey:@"like_dynamic"];
+    NSArray *strArray = [like_dynamic componentsSeparatedByString:@","];
+    BOOL isLike = NO;
+    for (NSString *str in strArray) {
+        if ([str isEqualToString:dynamic.objectId]) {
+            isLike = YES;
+        }
+    }
+    if (isLike) {
+        [self.btnZan setImage:[UIImage imageNamed:@"iconfont-zan"] forState:(UIControlStateNormal)];
+    }else{
+        [self.btnZan setImage:[UIImage imageNamed:@"iconfont-nozan"] forState:(UIControlStateNormal)];
+    }
     _dynamic = dynamic;
     _lblContent.text = [dynamic objectForKey:@"content"];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -44,7 +60,6 @@ static NSString *collCellIdent = @"imgColllCell";
     _lblLocationName.text = [dynamic objectForKey:@"location_name"];
     [_btnZan setTitle:[NSString stringWithFormat:@"%@",[dynamic objectForKey:@"praise_count"]] forState:(UIControlStateNormal)];
     [_btnCommend setTitle:[NSString stringWithFormat:@"%@",[dynamic objectForKey:@"comments_count"]] forState:(UIControlStateNormal)];
-    [_btnCollection setTitle:[NSString stringWithFormat:@"%@",[dynamic objectForKey:@"collection_count"]] forState:(UIControlStateNormal)];
     _imgUserPic.layer.masksToBounds = YES;
     _imgUserPic.layer.cornerRadius = 23;
     AVQuery *query = [AVUser query];
@@ -53,7 +68,7 @@ static NSString *collCellIdent = @"imgColllCell";
         if (error != nil) {
             ;
         }else {
-           self.lblUserNick.text = [[objects lastObject] objectForKey:@"userNickName"];
+            self.lblUserNick.text = [[objects lastObject] objectForKey:@"userNickName"];
             AVFile *file = [[objects lastObject] objectForKey:@"userPic"];
             [self.imgUserPic sd_setImageWithURL:[NSURL URLWithString:file.url]];
         }
@@ -117,14 +132,6 @@ static NSString *collCellIdent = @"imgColllCell";
         AppDelegate *dele = [UIApplication sharedApplication].delegate;
         PhotoBoardViewController *photoVC = [PhotoBoardViewController new];
         photoVC.currentPhoto = index;
-        
-//        NSMutableArray *array = [NSMutableArray array];
-//        for (NSString *url in vc.imgArray) {
-//            NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:url]];
-//            UIImage *img = [UIImage imageWithData:data];
-//            [array addObject:img];
-//        }
-      //  photoVC.thubArray = array;
         photoVC.imgArray = vc.imgHArray;
         [dele.mmdVC presentViewController:photoVC animated:YES completion:nil];
     };
@@ -172,10 +179,55 @@ static NSString *collCellIdent = @"imgColllCell";
     return _placehoderArray;
 }
 
-- (IBAction)btnGroup:(UIButton *)sender {
-}
-
 - (IBAction)actionZan:(UIButton *)sender {
+    
+    AVUser *currentUser = [AVUser currentUser];
+    if (currentUser == nil) {
+        AppDelegate *dele = [UIApplication sharedApplication].delegate;
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        LoginViewController *loginVC = [sb instantiateViewControllerWithIdentifier:@"loginVC"];
+        loginVC.backhandel = ^(){
+            [dele.mmdVC.tabBarController setSelectedIndex:0];
+        };
+        [dele.mmdVC presentViewController:loginVC animated:YES completion:nil];
+        return;
+    }
+    
+    NSString *like = [currentUser objectForKey:@"like_dynamic"];
+    if (like == nil) {
+        like = @"";
+    }
+    NSArray *strArray = [like componentsSeparatedByString:@","];
+    BOOL isLike = NO;
+    for (NSString *str in strArray) {
+        if ([str isEqualToString:self.dynamic.objectId]) {
+            isLike = YES;
+        }
+    }
+    if (isLike) {
+        NSMutableString *str = [NSMutableString stringWithString:like];
+        NSRange range = [str rangeOfString:[NSString stringWithFormat:@"%@%@",self.dynamic.objectId,@","]];
+        [str deleteCharactersInRange:range];
+        NSString *newStr = [NSString stringWithString:str];
+        [currentUser setObject:newStr forKey:@"like_dynamic"];
+        [currentUser saveInBackground];
+        [self.btnZan setImage:[UIImage imageNamed:@"iconfont-nozan"] forState:(UIControlStateNormal)];
+        NSInteger count = [self.btnZan.titleLabel.text integerValue];
+        count--;
+        [self.btnZan setTitle:[NSString stringWithFormat:@"%ld",count] forState:(UIControlStateNormal)];
+        [self.dynamic setObject:[NSNumber numberWithInteger:count]forKey:@"praise_count"];
+        [self.dynamic saveInBackground];
+    }else{
+        NSString *newStr = [NSString stringWithFormat:@"%@%@,",like,self.dynamic.objectId];
+        [currentUser setObject:newStr forKey:@"like_dynamic"];
+        [self.dynamic incrementKey:@"praise_count"];
+        [self.dynamic saveInBackground];
+        [self.btnZan setImage:[UIImage imageNamed:@"iconfont-zan"] forState:(UIControlStateNormal)];
+        NSInteger count = [self.btnZan.titleLabel.text integerValue];
+        count++;
+        [self.btnZan setTitle:[NSString stringWithFormat:@"%ld",count] forState:(UIControlStateNormal)];
+        [currentUser saveInBackground];
+    }
 }
 
 - (IBAction)actionCommend:(UIButton *)sender {

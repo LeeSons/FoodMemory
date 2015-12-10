@@ -27,16 +27,9 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)actionCancel:(UIButton *)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
-*/
 
 - (IBAction)actionRegiester:(UIButton *)sender {
     NSData *data = UIImagePNGRepresentation([UIImage imageNamed:@"defualt.jpg"]);
@@ -49,6 +42,10 @@
     [user setObject:@"F" forKey:@"gender"];
     [user setObject:@"这吃货很懒，什么都没写。" forKey:@"sign"];
     [user setObject:[NSString stringWithFormat:@"U%d",arc4random_uniform(10000)] forKey:@"userNickName"];
+    [user setObject:@"" forKey:@"uName"];
+    [user setObject:@"" forKey:@"hobby"];
+    [user setObject:@"" forKey:@"add"];
+    [user setObject:@"" forKey:@"collectionDIY"];
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded)[self dismissViewControllerAnimated:YES completion:nil];
         else LCPLog(@"注册失败%@",error);

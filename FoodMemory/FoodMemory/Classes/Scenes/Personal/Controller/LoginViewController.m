@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import "LCPAlertView.h"
 #import "RegiesterViewController.h"
+#import "PersonalViewController.h"
 @interface LoginViewController ()
 
 @property (nonatomic, strong) UITextField *txtUserName;
@@ -34,6 +35,15 @@
 
 // 添加控件
 - (void)addControl{
+    UIButton *btnBack = [UIButton buttonWithType:(UIButtonTypeSystem)];
+    [btnBack setImage:[UIImage imageNamed:@"iconfont-fanhui"] forState:(UIControlStateNormal)];
+    [btnBack setTitle:@"返回" forState:(UIControlStateNormal)];
+    [btnBack setTitleColor:[UIColor whiteColor] forState:(UIControlStateNormal)];
+    btnBack.frame = CGRectMake(10, 20, 80, 30);
+    btnBack.titleLabel.font = [UIFont systemFontOfSize:19];
+    btnBack.tintColor = [UIColor whiteColor];
+    [btnBack addTarget:self action:@selector(backClick) forControlEvents:(UIControlEventTouchUpInside)];
+    [self.view addSubview:btnBack];
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, kWindowHeight / 2.0 - 75, kWindowWidth, 195)];
     self.txtUserName = [[UITextField alloc] initWithFrame:CGRectMake(20, 5, kWindowWidth - 40, 40)];
     _txtUserName.borderStyle = UITextBorderStyleRoundedRect;
@@ -77,6 +87,12 @@
     [footerView addSubview:lblLine];
     [footerView addSubview:btnRegiester];
     [self.view addSubview:footerView];
+}
+
+// 返回继续浏览
+- (void)backClick{
+    self.backhandel();
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 // 添加过滤图层
@@ -132,13 +148,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

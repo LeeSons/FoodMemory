@@ -100,6 +100,12 @@
 		79BF9A141C0EC7490096859D /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79BF9A131C0EC7490096859D /* CoreTelephony.framework */; };
 		79BF9A161C0EC7630096859D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79BF9A151C0EC7630096859D /* CoreLocation.framework */; };
 		79BF9A1A1C0ECA290096859D /* AVOSCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79BF9A191C0ECA290096859D /* AVOSCloud.framework */; };
+		79BFA55E1C1906BF002426D0 /* baocun.png in Resources */ = {isa = PBXBuildFile; fileRef = 79BFA55C1C1906BF002426D0 /* baocun.png */; };
+		79BFA55F1C1906BF002426D0 /* baocun@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79BFA55D1C1906BF002426D0 /* baocun@2x.png */; };
+		79BFA5611C190C73002426D0 /* City.json in Resources */ = {isa = PBXBuildFile; fileRef = 79BFA5601C190C73002426D0 /* City.json */; };
+		79BFA5641C190D27002426D0 /* CityDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 79BFA5631C190D27002426D0 /* CityDataManager.m */; };
+		79BFA56A1C1926CD002426D0 /* LCPPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 79BFA5691C1926CD002426D0 /* LCPPicker.m */; };
+		79BFA56D1C196272002426D0 /* ShowHDImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 79BFA56C1C196272002426D0 /* ShowHDImage.m */; };
 		79C40DD91C17C4E500952707 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C40DD81C17C4E500952707 /* TestViewController.m */; };
 		79C40DE41C17D19A00952707 /* WebViewJavascriptBridge.js.txt in Resources */ = {isa = PBXBuildFile; fileRef = 79C40DDE1C17D19A00952707 /* WebViewJavascriptBridge.js.txt */; };
 		79C40DE51C17D19A00952707 /* WebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C40DDF1C17D19A00952707 /* WebViewJavascriptBridge.m */; };
@@ -283,6 +289,15 @@
 		79BF9A131C0EC7490096859D /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		79BF9A151C0EC7630096859D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		79BF9A191C0ECA290096859D /* AVOSCloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AVOSCloud.framework; sourceTree = "<group>"; };
+		79BFA55C1C1906BF002426D0 /* baocun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = baocun.png; sourceTree = "<group>"; };
+		79BFA55D1C1906BF002426D0 /* baocun@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "baocun@2x.png"; sourceTree = "<group>"; };
+		79BFA5601C190C73002426D0 /* City.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = City.json; sourceTree = "<group>"; };
+		79BFA5621C190D27002426D0 /* CityDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityDataManager.h; sourceTree = "<group>"; };
+		79BFA5631C190D27002426D0 /* CityDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityDataManager.m; sourceTree = "<group>"; };
+		79BFA5681C1926CD002426D0 /* LCPPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCPPicker.h; sourceTree = "<group>"; };
+		79BFA5691C1926CD002426D0 /* LCPPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCPPicker.m; sourceTree = "<group>"; };
+		79BFA56B1C196272002426D0 /* ShowHDImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowHDImage.h; sourceTree = "<group>"; };
+		79BFA56C1C196272002426D0 /* ShowHDImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowHDImage.m; sourceTree = "<group>"; };
 		79C40DD71C17C4E500952707 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		79C40DD81C17C4E500952707 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		79C40DDD1C17D19A00952707 /* WebViewJavascriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridge.h; sourceTree = "<group>"; };
@@ -487,6 +502,8 @@
 		79BF99941C0E8D020096859D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				79BFA55C1C1906BF002426D0 /* baocun.png */,
+				79BFA55D1C1906BF002426D0 /* baocun@2x.png */,
 				79AE2D131C18629100F1C1CD /* selPic.png */,
 				79AE2D011C181E9700F1C1CD /* defualt.jpg */,
 				79AE2D0E1C185CAA00F1C1CD /* iconfont-edit@2x.png */,
@@ -666,6 +683,7 @@
 		79BF99A01C0E8DAD0096859D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				79BFA5601C190C73002426D0 /* City.json */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -690,6 +708,8 @@
 		79BF99A21C0E8DB90096859D /* Handle */ = {
 			isa = PBXGroup;
 			children = (
+				79BFA5621C190D27002426D0 /* CityDataManager.h */,
+				79BFA5631C190D27002426D0 /* CityDataManager.m */,
 			);
 			path = Handle;
 			sourceTree = "<group>";
@@ -699,6 +719,10 @@
 			children = (
 				79AE2D091C18552100F1C1CD /* LCPImageView.h */,
 				79AE2D0A1C18552100F1C1CD /* LCPImageView.m */,
+				79BFA5681C1926CD002426D0 /* LCPPicker.h */,
+				79BFA5691C1926CD002426D0 /* LCPPicker.m */,
+				79BFA56B1C196272002426D0 /* ShowHDImage.h */,
+				79BFA56C1C196272002426D0 /* ShowHDImage.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -910,6 +934,7 @@
 				79035C8F1C17063800E14B11 /* iconfont-sc.png in Resources */,
 				791F4C351C131E3100500DC0 /* iconfont-canju@3x.png in Resources */,
 				791F4C291C131B7900500DC0 /* iconfont-daohangshouye@2x.png in Resources */,
+				79BFA5611C190C73002426D0 /* City.json in Resources */,
 				79035C8D1C17063800E14B11 /* iconfont-chidacan.png in Resources */,
 				79D3A2331C14179900B9C397 /* iconfont-pinglun.png in Resources */,
 				791F4C171C12C24000500DC0 /* add.png in Resources */,
@@ -920,6 +945,7 @@
 				791F4C2A1C131B7900500DC0 /* iconfont-weizhixinxi@2x.png in Resources */,
 				79D3A23A1C14193F00B9C397 /* iconfont-tuandui.png in Resources */,
 				79D3A2381C14179900B9C397 /* iconfont-zan@2x.png in Resources */,
+				79BFA55E1C1906BF002426D0 /* baocun.png in Resources */,
 				791F4C241C131ADF00500DC0 /* iconfont-wode.png in Resources */,
 				79C40DEC1C17E06100952707 /* File.js in Resources */,
 				798B97E41C11205D008A248C /* btn_gender_F@2x.png in Resources */,
@@ -954,6 +980,7 @@
 				79D3A2201C140D1700B9C397 /* DynamicViewCell.xib in Resources */,
 				79BF997A1C0E87250096859D /* Main.storyboard in Resources */,
 				798B981A1C118E62008A248C /* rewind_54.920245398773px_1187724_easyicon.net.png in Resources */,
+				79BFA55F1C1906BF002426D0 /* baocun@2x.png in Resources */,
 				791F4C2C1C131C3B00500DC0 /* writing@3x.png in Resources */,
 				79D3A2341C14179900B9C397 /* iconfont-pinglun@2x.png in Resources */,
 				79D3A2361C14179900B9C397 /* iconfont-shoucang@2x.png in Resources */,
@@ -1036,9 +1063,11 @@
 				79AE2D051C181EE700F1C1CD /* RegiesterViewController.m in Sources */,
 				791F4C151C12874100500DC0 /* UIButton+AGIPC.m in Sources */,
 				791F4C101C12874100500DC0 /* AGIPCGridItem.m in Sources */,
+				79BFA5641C190D27002426D0 /* CityDataManager.m in Sources */,
 				791F4C091C12874100500DC0 /* AGImagePickerController+Helper.m in Sources */,
 				791F4C121C12874100500DC0 /* AGIPCToolbarItem.m in Sources */,
 				791F4C0C1C12874100500DC0 /* AGImagePreviewController.m in Sources */,
+				79BFA56A1C1926CD002426D0 /* LCPPicker.m in Sources */,
 				79C40DEF1C18021D00952707 /* Test3ViewController.m in Sources */,
 				798B97EE1C112B43008A248C /* DynamicViewController.m in Sources */,
 				798B98031C113F17008A248C /* MMDrawerVisualState.m in Sources */,
@@ -1056,6 +1085,7 @@
 				79BF997D1C0E87250096859D /* FoodMemory.xcdatamodeld in Sources */,
 				791F4BE81C12798800500DC0 /* MJRefreshConst.m in Sources */,
 				79BF99E61C0E976F0096859D /* NSTimer+MyTimer.m in Sources */,
+				79BFA56D1C196272002426D0 /* ShowHDImage.m in Sources */,
 				79C40DF41C180AB900952707 /* LoginViewController.m in Sources */,
 				79BF99B91C0E94430096859D /* LCPNetWorking.m in Sources */,
 				79C40DD91C17C4E500952707 /* TestViewController.m in Sources */,

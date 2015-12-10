@@ -7,7 +7,9 @@
 //
 
 #import "BasePageController.h"
-
+typedef void (^BackHandel)(void);
 @interface LoginViewController : BasePageController
+
+@property(nonatomic, copy)BackHandel backhandel;
 
 @end

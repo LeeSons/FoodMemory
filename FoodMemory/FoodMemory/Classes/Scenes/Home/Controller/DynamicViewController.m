@@ -11,6 +11,7 @@
 #import "UIViewController+MMDrawerController.h"
 #import "AppDelegate.h"
 #import "DynamicViewCell.h"
+#import "LoginViewController.h"
 @interface DynamicViewController ()
 
 @property (nonatomic, strong) NSMutableArray *dataArray;
@@ -147,6 +148,17 @@
     }else{
         [self.uploding setImage:nil];
         [self.tableView headerBeginRefreshing];
+    }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([sender isKindOfClass:[UIBarButtonItem class]]) {
+        AVUser *user = [AVUser currentUser];
+        if (user == nil) {
+            LoginViewController *loginVC = [self.storyboard instantiateViewControllerWithIdentifier:@"loginVC"];
+            [self presentViewController:loginVC animated:YES completion:nil];
+            return;
+        }
     }
 }
 

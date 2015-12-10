@@ -82,6 +82,12 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     UIImage *img = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
     self.image = img;
+    NSData *data = UIImagePNGRepresentation(self.image);
+    AVFile *file = [AVFile fileWithData:data];
+    AVUser *user = [AVUser currentUser];
+    [file saveInBackground];
+    [user setObject:file forKey:@"userPic"];
+    [user saveInBackground];
     [[self viewController:self] dismissViewControllerAnimated:YES completion:nil];
 }
 

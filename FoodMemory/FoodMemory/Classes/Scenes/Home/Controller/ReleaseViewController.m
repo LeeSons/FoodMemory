@@ -13,9 +13,10 @@
 #import "AGIPCToolbarItem.h"
 #import "AGImagePickerController.h"
 #import "LCPAlertView.h"
+#import "SelectLocationController.h"
 #define kMaxCollectionHeight4 (290 / 3.0 + 10)*2
 #define kMaxCollectionHeight4_7 330
-@interface ReleaseViewController ()<UICollectionViewDataSource,UICollectionViewDelegateFlowLayout, AGImagePickerControllerDelegate, UITextViewDelegate>
+@interface ReleaseViewController ()<UICollectionViewDataSource,UICollectionViewDelegateFlowLayout, AGImagePickerControllerDelegate, UITextViewDelegate, UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 
 @property (nonatomic, strong)NSMutableArray *showImgArray;
 @property (nonatomic, strong)AGImagePickerController *pic;
@@ -40,8 +41,8 @@ static NSString *showCellIdent = @"showCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.collViewPic registerNib:[UINib nibWithNibName:@"ShowImageViewCell" bundle:nil] forCellWithReuseIdentifier:showCellIdent];
-    [self.collViewPic registerNib:[UINib nibWithNibName:@"SelectImageViewCell" bundle:nil] forCellWithReuseIdentifier:selectCellIdent];
+    [self.collViewPic registerNib:[UINib nibWithNibName:NSStringFromClass([ShowImageViewCell class]) bundle:nil] forCellWithReuseIdentifier:showCellIdent];
+    [self.collViewPic registerNib:[UINib nibWithNibName:NSStringFromClass([SelectImageViewCell class]) bundle:nil] forCellWithReuseIdentifier:selectCellIdent];
     self.collViewPic.delegate = self;
     self.collViewPic.dataSource = self;
     self.txtContent.delegate = self;
@@ -128,7 +129,18 @@ static NSString *showCellIdent = @"showCell";
         LCPLog(@"点了");
     }else{
         if (indexPath.row == self.showImgArray.count) {
-            [self opAction];
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"选择类型" preferredStyle:(UIAlertControllerStyleActionSheet)];
+            UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:nil];
+            UIAlertAction *opAction = [UIAlertAction actionWithTitle:@"选择相册" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+                [self opAction];
+            }];
+            UIAlertAction *opCamera = [UIAlertAction actionWithTitle:@"相机" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+                [self openCamera];
+            }];
+            [alert addAction:cancel];
+            [alert addAction:opAction];
+            [alert addAction:opCamera];
+            [self presentViewController:alert animated:YES completion:nil];
         }
     }
 }
@@ -229,10 +241,23 @@ static NSString *showCellIdent = @"showCell";
     [_pic showFirstAssetsController];
 }
 
+// 打开照相机
+- (void)openCamera{
+    UIImagePickerController *pic = [UIImagePickerController new];
+    // 设置资源类型为照相机
+    pic.sourceType = UIImagePickerControllerSourceTypeCamera;
+    pic.delegate = self;
+    pic.allowsEditing = YES;
+    [self presentViewController:pic animated:YES completion:nil];
+}
+
+
+
 // 发表动态
 - (void)postDynamic:(NSArray *)array{
+    AVUser *currentUser = [AVUser currentUser];
     Dynamic *dynamic = [[Dynamic alloc] init];
-    dynamic.uId = @"123456789";
+    dynamic.uId = currentUser.objectId;
     dynamic.content = self.txtContent.text;
     if (array) {
         dynamic.imgArray = [NSMutableArray arrayWithArray:array];
@@ -248,6 +273,13 @@ static NSString *showCellIdent = @"showCell";
     }];
 }
 
+#pragma mark -UIImagePickerControllerDelegate
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+    UIImage *img = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+    [self.showImgArray insertObject:img atIndex:0];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 #pragma mark -lazyLoad
 
 - (NSMutableArray *)showImgArray{
@@ -258,7 +290,8 @@ static NSString *showCellIdent = @"showCell";
 }
 
 - (IBAction)actionSelectLocation:(UIButton *)sender {
-    
+    SelectLocationController *select = [[SelectLocationController alloc] initWithStyle:(UITableViewStylePlain)];
+    [self presentViewController:select animated:YES completion:nil];
 }
 
 - (IBAction)actionCancel:(UIBarButtonItem *)sender {

@@ -45,6 +45,19 @@ static NSString *collCellIdent = @"imgColllCell";
     [_btnZan setTitle:[NSString stringWithFormat:@"%@",[dynamic objectForKey:@"praise_count"]] forState:(UIControlStateNormal)];
     [_btnCommend setTitle:[NSString stringWithFormat:@"%@",[dynamic objectForKey:@"comments_count"]] forState:(UIControlStateNormal)];
     [_btnCollection setTitle:[NSString stringWithFormat:@"%@",[dynamic objectForKey:@"collection_count"]] forState:(UIControlStateNormal)];
+    _imgUserPic.layer.masksToBounds = YES;
+    _imgUserPic.layer.cornerRadius = 23;
+    AVQuery *query = [AVUser query];
+    [query whereKey:@"objectId" equalTo:[dynamic objectForKey:@"uId"]];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (error != nil) {
+            ;
+        }else {
+           self.lblUserNick.text = [[objects lastObject] objectForKey:@"userNickName"];
+            AVFile *file = [[objects lastObject] objectForKey:@"userPic"];
+            [self.imgUserPic sd_setImageWithURL:[NSURL URLWithString:file.url]];
+        }
+    }];
     NSArray *array = [dynamic objectForKey:@"imgArray"];
     for (AVFile *file in array) {
         [self.imgHArray addObject:file.url];

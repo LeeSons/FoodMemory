@@ -47,6 +47,7 @@
         UIImageView *imgView = [[UIImageView alloc] init];
         imgView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
        // [imgView sd_setImageWithURL:self.imgArray[i] placeholderImage:self.thubArray[i]];
+         imgView.contentMode = UIViewContentModeScaleAspectFit;
         [photoArray addObject:imgView];
     }
     return photoArray;

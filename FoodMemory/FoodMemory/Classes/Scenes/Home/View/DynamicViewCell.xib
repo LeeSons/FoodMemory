@@ -21,7 +21,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="97V-Wq-E04">
                                 <rect key="frame" x="0.0" y="0.0" width="481" height="80"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="小豆豆" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h8I-zz-1Ce">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="null" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h8I-zz-1Ce">
                                         <rect key="frame" x="74" y="25" width="164" height="21"/>
                                         <animations/>
                                         <constraints>
@@ -32,7 +32,7 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015-02-01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N9E-wi-SbA">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="null" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N9E-wi-SbA">
                                         <rect key="frame" x="74" y="52" width="164" height="16"/>
                                         <animations/>
                                         <constraints>
@@ -42,21 +42,6 @@
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ShC-xY-IdN">
-                                        <rect key="frame" x="403" y="8" width="70" height="24"/>
-                                        <animations/>
-                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="24" id="irP-nF-xHQ"/>
-                                            <constraint firstAttribute="width" constant="70" id="tFg-gt-tjD"/>
-                                        </constraints>
-                                        <state key="normal" title="组团" image="iconfont-tuandui.png">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="btnGroup:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="HGC-tB-a48"/>
-                                        </connections>
-                                    </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3.png" translatesAutoresizingMaskIntoConstraints="NO" id="HoX-8G-hQb">
                                         <rect key="frame" x="20" y="22" width="46" height="46"/>
                                         <animations/>
@@ -71,9 +56,7 @@
                                     <constraint firstAttribute="height" constant="80" id="1ZR-fi-q1F"/>
                                     <constraint firstItem="HoX-8G-hQb" firstAttribute="centerY" secondItem="97V-Wq-E04" secondAttribute="centerY" constant="5" id="Eah-BZ-UKO"/>
                                     <constraint firstItem="HoX-8G-hQb" firstAttribute="leading" secondItem="97V-Wq-E04" secondAttribute="leading" constant="20" id="Ile-Lu-EpV"/>
-                                    <constraint firstAttribute="trailing" secondItem="ShC-xY-IdN" secondAttribute="trailing" constant="8" id="LbE-zs-rY5"/>
                                     <constraint firstItem="h8I-zz-1Ce" firstAttribute="leading" secondItem="HoX-8G-hQb" secondAttribute="trailing" constant="8" id="MLt-M4-Rhw"/>
-                                    <constraint firstItem="ShC-xY-IdN" firstAttribute="top" secondItem="97V-Wq-E04" secondAttribute="top" constant="8" id="NC4-l9-gsC"/>
                                     <constraint firstItem="N9E-wi-SbA" firstAttribute="width" secondItem="h8I-zz-1Ce" secondAttribute="width" id="RwP-IU-Jfq"/>
                                     <constraint firstItem="N9E-wi-SbA" firstAttribute="leading" secondItem="HoX-8G-hQb" secondAttribute="trailing" constant="8" id="ZkX-P9-6yW"/>
                                     <constraint firstItem="h8I-zz-1Ce" firstAttribute="top" secondItem="HoX-8G-hQb" secondAttribute="top" constant="3" id="hcw-bL-7Mg"/>
@@ -91,7 +74,7 @@
                                             <constraint firstAttribute="width" secondItem="dAb-ZF-JaA" secondAttribute="height" multiplier="1:1" id="P1A-Ag-jjt"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="金五星商厦五层蓝欧科技" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I4p-QC-csd">
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="null" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I4p-QC-csd">
                                         <rect key="frame" x="28" y="0.0" width="453" height="21"/>
                                         <animations/>
                                         <constraints>
@@ -172,7 +155,7 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                     </collectionView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="如果你无法简洁的表达你的想法，那只能说明你还不够了解它。哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bBE-zT-UcT">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="null" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bBE-zT-UcT">
                                         <rect key="frame" x="20" y="0.0" width="441" height="34"/>
                                         <animations/>
                                         <constraints>
@@ -242,7 +225,6 @@
         <image name="iconfont-dingwei.png" width="24" height="24"/>
         <image name="iconfont-pinglun.png" width="24" height="24"/>
         <image name="iconfont-shoucang.png" width="24" height="24"/>
-        <image name="iconfont-tuandui.png" width="24" height="24"/>
         <image name="iconfont-zan.png" width="24" height="24"/>
     </resources>
 </document>

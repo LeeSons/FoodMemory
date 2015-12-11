@@ -8,7 +8,7 @@
 
 #import "FeedBackViewController.h"
 
-@interface FeedBackViewController ()
+@interface FeedBackViewController ()<UITextViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextView *txtContent;
 
@@ -20,10 +20,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.txtContent.delegate = self;
     if ([self respondsToSelector:@selector(setAutomaticallyAdjustsScrollViewInsets:)]) {
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self.view endEditing:YES];
 }
 
 - (void)didReceiveMemoryWarning {

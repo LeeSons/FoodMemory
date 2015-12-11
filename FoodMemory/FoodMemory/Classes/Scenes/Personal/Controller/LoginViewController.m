@@ -35,6 +35,7 @@
 
 // 添加控件
 - (void)addControl{
+    
     UIButton *btnBack = [UIButton buttonWithType:(UIButtonTypeSystem)];
     [btnBack setImage:[UIImage imageNamed:@"iconfont-fanhui"] forState:(UIControlStateNormal)];
     [btnBack setTitle:@"返回" forState:(UIControlStateNormal)];
@@ -44,6 +45,11 @@
     btnBack.tintColor = [UIColor whiteColor];
     [btnBack addTarget:self action:@selector(backClick) forControlEvents:(UIControlEventTouchUpInside)];
     [self.view addSubview:btnBack];
+    
+    UIImageView *imgLogo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo"]];
+    imgLogo.frame = CGRectMake((kWindowWidth - 200) / 2.0, 100, 200, 50);
+    [self.view addSubview:imgLogo];
+    
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, kWindowHeight / 2.0 - 75, kWindowWidth, 195)];
     self.txtUserName = [[UITextField alloc] initWithFrame:CGRectMake(20, 5, kWindowWidth - 40, 40)];
     _txtUserName.borderStyle = UITextBorderStyleRoundedRect;
